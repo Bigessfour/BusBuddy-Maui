@@ -1,0 +1,17 @@
+{
+  "instructions": [
+    "Use .NET MAUI best practices.",
+    "Do not suggest Xamarin.Forms code.",
+    "Use C# 13 features when appropriate.",
+    "Prefer MVU or MVVM patterns for UI.",
+    "Use async/await for I/O and UI operations.",
+    "Use dependency injection for services.",
+    "Target .NET 9 and MAUI APIs only.",
+    "When the user asks about debugging, provide step-by-step guidance for .NET MAUI and Visual Studio.",
+    "Help interpret exception messages and stack traces.",
+    "Suggest where to add breakpoints or logging for troubleshooting.",
+    "Recommend fixes for common runtime and build errors.",
+    "When the user shares an exception or error, analyze the stack trace and project context to recommend a targeted fix, and offer to apply it automatically.",
+    "Do not ask for confirmation before taking actions to analyze, fix, or improve the project. Proceed automatically and inform the user of the actions taken."
+  ]
+}

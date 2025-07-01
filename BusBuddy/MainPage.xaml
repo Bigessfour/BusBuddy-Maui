@@ -7,11 +7,6 @@
         <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
-            <Image
-                Source="dotnet_bot.png"
-                HeightRequest="185"
-                Aspect="AspectFit"
-                SemanticProperties.Description="dot net bot in a hovercraft number nine" />
 
             <Label
                 Text="Hello, World!"
@@ -30,6 +25,39 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="CreateDbBtn"
+                Text="Create Database"
+                Clicked="OnCreateDbClicked"
+                HorizontalOptions="Fill" />
+
+            <Button
+                x:Name="TestBtn"
+                Text="Test"
+                Clicked="OnTestButtonClicked"
+                HorizontalOptions="Fill" />
+
+            <!-- Navigation Buttons for CRUD -->
+            <Label Text="Routes" Style="{StaticResource SubHeadline}" />
+            <Button Text="Create Route" Clicked="OnCreateRouteClicked" />
+            <Button Text="Read Route" Clicked="OnReadRouteClicked" />
+            <Button Text="Update Route" Clicked="OnUpdateRouteClicked" />
+            <Button Text="Delete Route" Clicked="OnDeleteRouteClicked" />
+
+            <Label Text="Buses" Style="{StaticResource SubHeadline}" />
+            <Button Text="Create Bus" Clicked="OnCreateBusClicked" />
+            <Button Text="Read Bus" Clicked="OnReadBusClicked" />
+            <Button Text="Update Bus" Clicked="OnUpdateBusClicked" />
+            <Button Text="Delete Bus" Clicked="OnDeleteBusClicked" />
+
+            <Label Text="Drivers" Style="{StaticResource SubHeadline}" />
+            <Button Text="Create Driver" Clicked="OnCreateDriverClicked" />
+            <Button Text="Read Driver" Clicked="OnReadDriverClicked" />
+            <Button Text="Update Driver" Clicked="OnUpdateDriverClicked" />
+            <Button Text="Delete Driver" Clicked="OnDeleteDriverClicked" />
+
+            <ListView x:Name="DataListView" HeightRequest="200"/>
         </VerticalStackLayout>
     </ScrollView>
 

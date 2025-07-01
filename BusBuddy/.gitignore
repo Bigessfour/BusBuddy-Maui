@@ -1,2 +1,25 @@
-# Ignore Visual Studio Code settings
+# Visual Studio Code
 .vscode/
+
+# .NET MAUI / .NET
+bin/
+obj/
+*.user
+*.suo
+*.userprefs
+*.csproj.user
+
+# Syncfusion
+Syncfusion*
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# Visual Studio .vs folder (IDE state, should not be tracked)
+.vs/
+BusBuddy/.vs/
+BusBuddy/.vs/BusBuddy/FileContentIndex/
+BusBuddy/.vs/BusBuddy/FileContentIndex/6c9953e5-d0d2-482a-ae7f-ffdd32b5f198.vsidx

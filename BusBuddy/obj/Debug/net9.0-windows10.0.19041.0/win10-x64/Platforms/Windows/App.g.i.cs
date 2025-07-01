@@ -66,7 +66,20 @@ namespace BusBuddy.WinUI
 #if DEBUG && !DISABLE_XAML_GENERATED_BREAK_ON_UNHANDLED_EXCEPTION
             UnhandledException += (sender, e) =>
             {
-                if (global::System.Diagnostics.Debugger.IsAttached) global::System.Diagnostics.Debugger.Break();
+                if (!global::System.Diagnostics.Debugger.IsAttached)
+                    return;
+                global::System.Diagnostics.Debugger.Break();
+#if DEBUG && !DISABLE_XAML_GENERATED_BREAK_ON_UNHANDLED_EXCEPTION
+            UnhandledException += (sender, e) =>
+            {
+                if (!global::System.Diagnostics.Debugger.IsAttached)
+                    return;
+                // Prevent breaking into the debugger for handled exceptions
+                if (e != null && e.Handled)
+                    return;
+                global::System.Diagnostics.Debugger.Break();
+            };
+#endif
             };
 #endif
         }
