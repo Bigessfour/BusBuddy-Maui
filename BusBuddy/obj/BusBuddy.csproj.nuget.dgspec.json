@@ -62,9 +62,13 @@
             },
             "Microsoft.Maui.Controls": {
               "target": "Package",
-              "version": "[9.0.0, )"
+              "version": "[9.0.51, )"
             },
             "Syncfusion.Maui.Core": {
+              "target": "Package",
+              "version": "[30.1.37, )"
+            },
+            "Syncfusion.Maui.TabView": {
               "target": "Package",
               "version": "[30.1.37, )"
             }

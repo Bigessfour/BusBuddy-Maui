@@ -1,0 +1,52 @@
+﻿using System;
+using System.Threading.Tasks;
+using Microsoft.Maui.Controls;
+
+namespace BusBuddy;
+
+public partial class MainPage : ContentPage
+{
+	int count = 0;
+
+	public MainPage()
+	{
+		InitializeComponent();
+		// Run SQL schema test on load
+		_ = TestSqlSchemaAsync();
+	}
+
+	private void OnCounterClicked(object? sender, EventArgs e)
+	{
+		count++;
+
+		if (count == 1)
+			CounterBtn.Text = $"Clicked {count} time";
+		else
+			CounterBtn.Text = $"Clicked {count} times";
+
+		SemanticScreenReader.Announce(CounterBtn.Text);
+	}
+
+	private async Task TestSqlSchemaAsync()
+	{
+		// Example LocalDB connection string, adjust as needed
+		string connectionString = "Server=(localdb)\\MSSQLLocalDB;Database=BusBuddy;Trusted_Connection=True;";
+		bool canConnect = await DatabaseService.TestConnectionAsync(connectionString);
+		if (!canConnect)
+		{
+			await DisplayAlert("SQL Test", "Failed to connect to database.", "OK");
+			return;
+		}
+		var db = new DatabaseService(connectionString, true);
+		try
+		{
+			var tables = await db.GetTableNamesAsync();
+			string msg = tables.Count > 0 ? $"Tables: {string.Join(", ", tables)}" : "No tables found.";
+			await DisplayAlert("SQL Schema Test", msg, "OK");
+		}
+		catch (Exception ex)
+		{
+			await DisplayAlert("SQL Test Error", ex.Message, "OK");
+		}
+	}
+}

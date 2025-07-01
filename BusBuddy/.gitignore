@@ -23,3 +23,9 @@ Thumbs.db
 BusBuddy/.vs/
 BusBuddy/.vs/BusBuddy/FileContentIndex/
 BusBuddy/.vs/BusBuddy/FileContentIndex/6c9953e5-d0d2-482a-ae7f-ffdd32b5f198.vsidx
+
+# Test Results
+TestResults/
+
+# Do not ignore Resources/Fonts/
+!Resources/Fonts/

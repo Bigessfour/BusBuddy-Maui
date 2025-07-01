@@ -13,6 +13,7 @@
           "Microsoft.Extensions.Logging.Debug": "9.0.0",
           "Microsoft.Maui.Controls": "9.0.0",
           "Syncfusion.Maui.Core": "30.1.37",
+          "Syncfusion.Maui.TabView": "30.1.37",
           "Microsoft.Web.WebView2.Core.Projection": "1.0.2792.45",
           "runtimepack.Microsoft.Windows.SDK.NET.Ref": "10.0.19041.57"
         },
@@ -704,6 +705,17 @@
           }
         }
       },
+      "Syncfusion.Maui.TabView/30.1.37": {
+        "dependencies": {
+          "Syncfusion.Maui.Core": "30.1.37"
+        },
+        "runtime": {
+          "lib/net9.0-windows10.0.19041.0/Syncfusion.Maui.TabView.dll": {
+            "assemblyVersion": "30.1.37.0",
+            "fileVersion": "30.1.37.0"
+          }
+        }
+      },
       "System.ClientModel/1.0.0": {
         "dependencies": {
           "System.Memory.Data": "1.0.2",
@@ -1105,6 +1117,13 @@
       "sha512": "sha512-BJNYWHP21Meu2VeGDG3P++n12Dj21ot+9mcwtILNnV1JYCbgv/gUyw1f5+Ea5c+ZV4wWZZcgnSryuSmsPm119A==",
       "path": "syncfusion.maui.core/30.1.37",
       "hashPath": "syncfusion.maui.core.30.1.37.nupkg.sha512"
+    },
+    "Syncfusion.Maui.TabView/30.1.37": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bZqidp6pZyMqeVT5vc7xWJR84NtvWeo96xHEMzozNt6+BkglHphlb31fiyd3Ai7Z3i27Tt6NmMXUPrfc1NGK9g==",
+      "path": "syncfusion.maui.tabview/30.1.37",
+      "hashPath": "syncfusion.maui.tabview.30.1.37.nupkg.sha512"
     },
     "System.ClientModel/1.0.0": {
       "type": "package",

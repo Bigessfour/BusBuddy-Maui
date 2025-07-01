@@ -20,6 +20,7 @@ namespace BusBuddy
                 });
 
             builder.Services.AddTransient<MainPage>();
+            builder.Services.AddTransient<DashboardPage>();
 
 #if DEBUG
             builder.Logging.AddDebug();

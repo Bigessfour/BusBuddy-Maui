@@ -1,0 +1,63 @@
+﻿using Microsoft.Data.SqlClient;
+using System;
+using System.Data;
+using System.Threading.Tasks;
+using System.Collections.Generic;
+
+namespace BusBuddy
+{
+    public class DatabaseService
+    {
+        private readonly string _connectionString;
+
+        public DatabaseService(string databaseName)
+        {
+            // Use Windows Authentication and trust server certificate
+            _connectionString = $"Server=ST-LPTP9-23\\SQLEXPRESS01;Database={databaseName};Trusted_Connection=True;Encrypt=Optional;TrustServerCertificate=True;";
+        }
+
+        public async Task<DataTable> ExecuteQueryAsync(string query)
+        {
+            using var connection = new SqlConnection(_connectionString);
+            using var command = new SqlCommand(query, connection);
+            var dataTable = new DataTable();
+            await connection.OpenAsync();
+            using var reader = await command.ExecuteReaderAsync();
+            dataTable.Load(reader);
+            return dataTable;
+        }
+
+        public async Task<int> ExecuteNonQueryAsync(string query)
+        {
+            using var connection = new SqlConnection(_connectionString);
+            using var command = new SqlCommand(query, connection);
+            await connection.OpenAsync();
+            return await command.ExecuteNonQueryAsync();
+        }
+
+        public async Task<List<string>> GetTableNamesAsync()
+        {
+            var tableNames = new List<string>();
+            using var connection = new SqlConnection(_connectionString);
+            using var command = new SqlCommand("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'", connection);
+            await connection.OpenAsync();
+            using var reader = await command.ExecuteReaderAsync();
+            while (await reader.ReadAsync())
+            {
+                tableNames.Add(reader.GetString(0));
+            }
+            return tableNames;
+        }
+
+        public async Task<DataTable> GetTableInfoAsync(string tableName)
+        {
+            using var connection = new SqlConnection(_connectionString);
+            using var command = new SqlCommand($"SELECT * FROM [{tableName}]", connection);
+            var dataTable = new DataTable();
+            await connection.OpenAsync();
+            using var reader = await command.ExecuteReaderAsync();
+            dataTable.Load(reader);
+            return dataTable;
+        }
+    }
+}

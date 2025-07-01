@@ -1,4 +1,5 @@
 ﻿using Syncfusion.Licensing;
+using Microsoft.Maui.Controls;
 
 namespace BusBuddy;
 
@@ -23,6 +24,10 @@ public partial class App : Application
 
     protected override Window CreateWindow(IActivationState? activationState)
     {
-        return new Window(new AppShell());
+        var window = new Window(new AppShell());
+#if WINDOWS
+        // If you need to maximize or set window state, use Syncfusion or WinUI APIs as needed
+#endif
+        return window;
     }
 }

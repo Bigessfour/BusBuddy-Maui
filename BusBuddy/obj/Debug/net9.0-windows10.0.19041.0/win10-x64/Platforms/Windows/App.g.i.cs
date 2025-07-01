@@ -17,7 +17,7 @@ namespace BusBuddy.WinUI
     /// </summary>
     public static class Program
     {
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2409")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2502")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.STAThreadAttribute]
         static void Main(string[] args)
@@ -34,12 +34,12 @@ namespace BusBuddy.WinUI
 
     partial class App : global::Microsoft.Maui.MauiWinUIApplication
     {
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2409")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2502")]
         private bool _contentLoaded;
         /// <summary>
         /// InitializeComponent()
         /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2409")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.UI.Xaml.Markup.Compiler"," 3.0.0.2502")]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public void InitializeComponent()
         {
@@ -66,20 +66,7 @@ namespace BusBuddy.WinUI
 #if DEBUG && !DISABLE_XAML_GENERATED_BREAK_ON_UNHANDLED_EXCEPTION
             UnhandledException += (sender, e) =>
             {
-                if (!global::System.Diagnostics.Debugger.IsAttached)
-                    return;
-                global::System.Diagnostics.Debugger.Break();
-#if DEBUG && !DISABLE_XAML_GENERATED_BREAK_ON_UNHANDLED_EXCEPTION
-            UnhandledException += (sender, e) =>
-            {
-                if (!global::System.Diagnostics.Debugger.IsAttached)
-                    return;
-                // Prevent breaking into the debugger for handled exceptions
-                if (e != null && e.Handled)
-                    return;
-                global::System.Diagnostics.Debugger.Break();
-            };
-#endif
+                if (global::System.Diagnostics.Debugger.IsAttached) global::System.Diagnostics.Debugger.Break();
             };
 #endif
         }
